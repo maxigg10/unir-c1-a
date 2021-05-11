@@ -17,15 +17,15 @@ def get (event, context):
         }
     )
 
-    source_language = 'auto'
+    source = 'auto'
     if event['pathParameters']['lg'] == 'en':
-        target_language = 'en'
+        target = 'en'
     elif event['pathParameters']['lg'] == 'fr':
-        target_language = 'fr'
+        target = 'fr'
     else:
-        target_language = 'auto'
+        target = 'auto'
 
-    finalresult=translate.translate_text(Text=result['Item']['text'], SourceLanguageCode=source_language, TargetLanguageCode=target_language)
+    finalresult = translate.translate_text(Text = result['Item']['text'], SourceLanguageCode=source, TargetLanguageCode=target)
     result['Item']["text"] = finalresult.get('TranslatedText')
 
     #create a response
