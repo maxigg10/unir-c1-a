@@ -17,7 +17,7 @@ def get (event, context):
         }
     )
 
-    source_languague = 'auto'
+    source_language = 'auto'
     if event['pathParameters']['lg'] == 'en':
         target_language = 'en'
     elif event['pathParameters']['lg'] == 'fr':
