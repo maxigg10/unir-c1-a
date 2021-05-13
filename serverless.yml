@@ -24,6 +24,17 @@ provider:
       Action:
         - translate:TranslateText
         - comprehend:DetectDominantLanguage
+        - translate:GetTerminology
+        - translate:ListTerminologies
+        - translate:ListTextTranslationJobs
+        - translate:DescribeTextTranslationJob
+        - translate:GetParallelData
+        - translate:ListParallelData
+        - cloudwatch:GetMetricStatistics
+        - cloudwatch:ListMetrics
+        - logs:CreateLogGroup
+        - logs:CreateLogStream
+        - logs:PutLogEvents
       Resource: "*"
 
 functions:
