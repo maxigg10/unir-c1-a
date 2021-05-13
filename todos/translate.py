@@ -26,6 +26,9 @@ def get (event, context):
         target = 'auto'
 
     finalresult = translate.translate_text(Text = result['Item']['text'], SourceLanguageCode=source, TargetLanguageCode=target)
+    
+    print (finalresult)
+
     result['Item']["text"] = finalresult.get('TranslatedText')
 
     #create a response
@@ -35,4 +38,4 @@ def get (event, context):
                            cls=decimalencoder.DecimalEncoder)
     }
 
-   # return response
+    return response
